@@ -1,0 +1,200 @@
+:root {
+  --text-color: #ABB2BF;
+  --bg-color: #1E2127;
+  --blue: #61AFEF;
+  --red: #E06C75;
+  --yellow: #D19A66;
+  --green: #98C379;
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0 auto;
+}
+
+h2 {
+  color: var(--red);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+ul li:before {
+  content: "\2022";
+  color: var(--yellow);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+
+
+/* Body layout */
+
+.body-layout {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 100%;
+}
+
+.background-picture {
+  position: absolute;
+  overflow:auto;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #084177, #001F3F, var(--bg-color));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+/* Navigation bar */
+
+.navbar {
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
+    background-color: transparent;
+}
+
+.burger-lines {
+  width: 20px;
+  height: 2px;
+  background-color: var(--yellow);
+  margin: 6px 0;
+}
+
+.burger-icon {
+    float: left;
+    cursor: pointer;
+    padding: 20px 15px;
+    border: none;
+    background-color: transparent;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    /* min-width: 160px; */
+    padding: 0px 30px;
+    z-index: 1;
+    top: 80px; /* Adjust the top position as needed */
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    letter-spacing: 2px;
+    padding: 5px 0px;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+  color: var(--red);
+}
+
+.fancy-text {
+  background-image: linear-gradient(var(--blue), var(--blue));
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left 0px bottom;
+}
+
+.fancy-text:hover {
+  /* display: inline-block; */
+  transform: skew(-15deg);
+  background-size: 100% 2px;
+  transition: background-size 0.4s ease;
+}
+
+.flickering-text {
+  display: inline-block;
+  position: relative;
+  text-shadow: 0 0 15px var(--red);
+}
+
+.flicker-animation {
+  animation: flicker 0.3s;
+  animation-iteration-count: 3;
+  animation-delay: .1s;
+}
+
+@keyframes flicker {
+  0% {
+      opacity: 1;
+  }
+  25% {
+      opacity: 0.2;
+  }
+  65% {
+      opacity: 0.8;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+
+
+/*  */
+
+.custom-horizontal-line {
+  /* margin: 20px auto; Adjust the margin to center the line */
+  border: 1.5px solid var(--blue); /* Adjust the color of the line */
+  box-shadow: 0 0 2px var(--blue),
+  0 0 5px var(--blue); /* Adjust shadow properties */
+}
+
+
+
+/*  */
+
+.responsive-image {
+  max-height: 400px; /* Set the maximum width to 100% of its container */
+  max-width: 600px; /* Set the maximum width to 100% of its container */
+  height: auto; /* Maintain the aspect ratio and prevent stretching */
+  display: block; /* Remove any extra space below the image */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+
+
+/*  */
+
+.split-container {
+  display: flex;
+  height: 100vh;
+}
+
+.latex-container, .picture-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.latex-container {
+  box-sizing: border-box;
+}
+
+.picture-container {
+  position: relative;
+}
+
+.picture-container img {
+  width: 100%;
+  height: 100%;
+}
