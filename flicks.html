@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="nVsi-JeoMDlzWb5_vz7a-1x-ZkdvWosW8DDKQxf8r0A">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"> -->
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"> -->
+    </head>
+
+    <body>
+        <div class="background-picture">
+        <div class="navbar">
+            <button class="burger-icon" onclick="toggleDropdown()">
+                <div class="burger-lines"></div>
+                <div class="burger-lines"></div>
+                <div class="burger-lines"></div>
+            </button>
+        </div>
+
+        <div class="dropdown-content" id="dropdownContent">
+            <div class=fancy-text><a href="index.html">Home</a></div>
+            <div class=fancy-text><a href="pics.html">Pictures</a></div>
+        </div>
+
+        <div style="text-align:center; margin-top: 0px; margin-bottom: 50px;">
+            <div style="font-size: 300%; color: var(--red); cursor: default; letter-spacing: 4px; font-family: Pacifico;"><div class="flickering-text" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">Flick</div> <div class="flickering-text" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">Of</div> <div class="flickering-text" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">The</div> <div class="flickering-text" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">Day</div></div>
+            <hr class="custom-horizontal-line" style="width: 40%; margin-top: 0px" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">
+            <hr class="custom-horizontal-line" style="width: 50%" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">
+            <hr class="custom-horizontal-line" style="width: 60%" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">
+        </div>
+
+        <img class="responsive-image" id="dailyImage">
+        <div style="text-align:center; margin-top: -50px;">
+            <p style="color: var(--text-color); font-size: 500%; letter-spacing: 2px; cursor: default; font-family: Bebas Neue;" id="imageName"></p>
+        </div>
+        </div>
+    </body>
+
+    <script>
+        // Dropdown menu
+
+        const dropdown = document.getElementById("dropdownContent");
+
+        function toggleDropdown() {
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+        }
+
+        window.onclick = function(event) { // Close the dropdown menu when clicking outside of it
+            if (!event.target.matches('.burger-icon')) {
+                if (dropdown.style.display === "block") {
+                    dropdown.style.display = "none";
+                }
+            }
+        }
+
+        //
+
+        function startFlicker(element) {
+            element.classList.add('flicker-animation');
+        }
+
+        function stopFlicker(element) {
+            element.classList.remove('flicker-animation');
+        }
+
+        //
+
+        const imageUrls = [
+            //
+            'images/Picnic_(1955).jpg',
+            //
+            'images/Phantom_Of_The_Paradise_(1974).jpg',
+            // David Lynch
+            'images/Blue_Velvet_(1986).jpg',
+            'images/Wild_At_Heart_(1990).jpg',
+            'images/Twin_Peaks_Fire_Walk_With_Me_(1992).jpg',
+            'images/Lost_Highway_(1997).jpg',
+            'images/Mulholland_Drive_(2001).jpg',
+            'images/Inland_Empire_(2006).jpg',
+            // Martin Scorcese
+            'images/Color_Of_Money_(1986).jpg',
+            'images/Casino_(1995).jpg',
+            // Sofia Coppola
+            'images/Virgin_Suicides_(1999).jpg',
+            //
+            'images/Breakfast_Club_(1985).jpg',
+            'images/Heathers_(1988).jpg',
+            'images/Pump_Up_The_Volume_(1990).jpg',
+            //
+            'images/Top_Gun_(1986).jpg',
+            // David Cronenberg
+            'images/Crash_(1996).jpg'
+        ];
+
+        const currentDate = new Date();
+        const dayOfYear = Math.ceil((currentDate - new Date(currentDate.getFullYear(), 0, 1)) / 86400000);
+
+        const pathImage = imageUrls[dayOfYear % imageUrls.length];
+        document.getElementById('dailyImage').src = pathImage;
+
+        const pathImageNoUnderscore = pathImage.replace(/_/g, ' ');
+        const imageNameWithExt = pathImageNoUnderscore.substring(pathImageNoUnderscore.lastIndexOf('/') + 1);
+        const imageName = imageNameWithExt.substring(0, imageNameWithExt.lastIndexOf('.'));
+        document.getElementById("imageName").innerHTML = imageName;
+    </script>
+</html>
