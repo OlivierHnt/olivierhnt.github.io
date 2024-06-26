@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="nVsi-JeoMDlzWb5_vz7a-1x-ZkdvWosW8DDKQxf8r0A">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+        <!-- The loading of KaTeX is deferred to speed up page rendering -->
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+        <!-- To automatically render math in text elements, include the auto-render extension: -->
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <button class="burger-icon" onclick="toggleDropdown()">
+                <div class="burger-lines"></div>
+                <div class="burger-lines"></div>
+                <div class="burger-lines"></div>
+            </button>
+        </div>
+
+        <div class="dropdown-content" id="dropdownContent">
+            <div class=fancy-text><a href="index.html">Home</a></div>
+            <div class=fancy-text><a href="flicks.html">Flick of the day</a></div>
+        </div>
+
+        <div class="body-layout">
+        <div class="split-container" style="margin-top: 50px;">
+            <div class="latex-container">
+                <h2>Chua's circuit</h2>
+                \begin{align}
+                    \frac{d}{dt} x &= \alpha (y - x - f(x, \gamma, \delta)), \\
+                    \frac{d}{dt} y &= x - y + z, \\
+                    \frac{d}{dt} z &= -\beta y,
+                \end{align}
+                <p>where \(f(x, \gamma, \delta) = \gamma x + (\delta - \gamma) (|x+1| - |x-1|) / 2\).</p>
+                <p>The picture represents the projection of the chaotic attractor in the \(y-z\) plane, for parameter values \(\alpha = 15.446\), \(\beta = 28\), \(\gamma = -0.714\) and \(\delta = -1.143\).</p>
+            </div>
+            <div class="picture-container">
+                <img src="images/chua.png" alt="Your Picture">
+            </div>
+        </div>
+        </div>
+    </body>
+
+    <script>
+        // Dropdown menu
+
+        const dropdown = document.getElementById("dropdownContent");
+
+        function toggleDropdown() {
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+        }
+
+        window.onclick = function(event) { // Close the dropdown menu when clicking outside of it
+            if (!event.target.matches('.burger-icon')) {
+                if (dropdown.style.display === "block") {
+                    dropdown.style.display = "none";
+                }
+            }
+        }
+    </script>
+</html>
