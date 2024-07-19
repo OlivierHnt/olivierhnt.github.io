@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="nVsi-JeoMDlzWb5_vz7a-1x-ZkdvWosW8DDKQxf8r0A">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"> -->
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"> -->
+    </head>
+
+    <body>
+        <div class="background-picture">
+        <div class="navbar">
+            <button class="burger-icon" id="burgerIcon" onclick="toggleDropdown()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <div class="dropdown-content" id="dropdownContent">
+                <div class=fancy-text><a href="index.html">Home</a></div>
+                <div class=fancy-text><a href="pics.html">Pictures</a></div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top: 0px; margin-bottom: 50px;">
+            <div style="font-size: 300%; color: var(--red); cursor: default; letter-spacing: 4px; font-family: Pacifico;"><div class="flickering-text" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">Flick</div> <div class="flickering-text" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">Of</div> <div class="flickering-text" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">The</div> <div class="flickering-text" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">Day</div></div>
+            <hr class="custom-horizontal-line" style="width: 40%; margin-top: 0px" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">
+            <hr class="custom-horizontal-line" style="width: 50%" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">
+            <hr class="custom-horizontal-line" style="width: 60%" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">
+        </div>
+
+        <img class="responsive-image" id="dailyImage">
+        <div style="text-align:center; margin-top: -50px;">
+            <p style="color: var(--text-color); font-size: 500%; letter-spacing: 2px; cursor: default; font-family: Bebas Neue;" id="imageName"></p>
+        </div>
+        </div>
+    </body>
+
+    <script src="script.js"></script>
+
+</html>

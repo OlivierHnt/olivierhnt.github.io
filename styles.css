@@ -1,0 +1,249 @@
+:root {
+  --text-color: #ABB2BF;
+  --bg-color: #1E2127;
+  --blue: #61AFEF;
+  --red: #E06C75;
+  --yellow: #D19A66;
+  --green: #98C379;
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0 auto;
+}
+
+h2 {
+  color: var(--red);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+ul li:before {
+  content: "\2022";
+  color: var(--yellow);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+
+
+/* Body layout */
+
+.body-layout {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.background-picture {
+  position: absolute;
+  overflow:auto;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #084177, #001F3F, var(--bg-color));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+/* Navigation bar */
+
+.navbar {
+  padding: 15px;
+  position: relative;
+}
+
+
+
+.burger-icon {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  width: 28px;
+  height: 22px;
+  border: none;
+  background-color: transparent;
+}
+
+.burger-icon div {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--yellow);
+  border-radius: 10px;
+  transition: all 0.25s ease-in-out;
+  left: 0;
+}
+
+.burger-icon div:nth-child(1) {
+  top: 0px;
+}
+
+.burger-icon div:nth-child(2) {
+  top: 10px;
+}
+
+.burger-icon div:nth-child(3) {
+  top: 20px;
+}
+
+.burger-icon.open div:nth-child(1) {
+  top: 10px;
+  transform: rotate(45deg);
+}
+
+.burger-icon.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-icon.open div:nth-child(3) {
+  top: 10px;
+  transform: rotate(-45deg);
+}
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1;
+  /* background-color: #f9f9f9; */
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  /* top: 80px; */
+  border: 1px dashed var(--yellow);
+  border-radius: 5%;
+  margin-top: 10px;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.dropdown-content a {
+  color: var(--text-color);
+  letter-spacing: 2px;
+  padding: 5px 5px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  color: var(--red);
+}
+
+
+
+.fancy-text {
+  background-image: linear-gradient(var(--blue), var(--blue));
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom 2px;
+  /* transform: skew(-15deg); */
+}
+
+.fancy-text:hover {
+  /* display: inline-block; */
+  /* transform: skew(-15deg); */
+  background-size: 100% 2px;
+  transition: background-size 0.4s ease;
+}
+
+
+
+/*  */
+
+.flickering-text {
+  display: inline-block;
+  position: relative;
+  text-shadow: 0 0 15px var(--red);
+}
+
+.flicker-animation {
+  animation: flicker 0.3s;
+  animation-iteration-count: 3;
+  animation-delay: .1s;
+}
+
+@keyframes flicker {
+  0% {
+      opacity: 1;
+  }
+  25% {
+      opacity: 0.2;
+  }
+  65% {
+      opacity: 0.8;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+
+
+/*  */
+
+.custom-horizontal-line {
+  /* margin: 20px auto; Adjust the margin to center the line */
+  border: 1.5px solid var(--blue); /* Adjust the color of the line */
+  box-shadow: 0 0 2px var(--blue),
+  0 0 5px var(--blue); /* Adjust shadow properties */
+}
+
+
+
+/*  */
+
+.responsive-image {
+  max-height: 400px; /* Set the maximum width to 100% of its container */
+  max-width: 600px; /* Set the maximum width to 100% of its container */
+  height: auto; /* Maintain the aspect ratio and prevent stretching */
+  display: block; /* Remove any extra space below the image */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+
+
+/*  */
+
+.split-container {
+  display: flex;
+  max-height: 100vh;
+}
+
+.latex-container {
+  flex: 1;
+  box-sizing: border-box;
+  text-align: justify;
+  margin-right: 25px;
+  overflow: scroll;
+}
+
+.picture-container {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 0 2px 2px var(--green);
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 600px;
+}
