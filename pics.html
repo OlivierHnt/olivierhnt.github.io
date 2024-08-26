@@ -31,25 +31,7 @@
         <div class="body-layout">
         <div class="split-container" style="margin-top: 50px; margin-bottom: 100px;">
             <div class="latex-container">
-                <div style="text-align:center; font-size: 300%; color: var(--red); cursor: default; letter-spacing: 4px; font-family: Pacifico;"><div class="flickering-text">Chua's circuit</div></div>
-                <p>This picture represents the projection of the chaotic attractor in the \(yOz\) plane for the ODE</p>
-                \begin{align}
-                    \frac{d}{dt} x &= \alpha (y - x - f(x, \gamma, \delta)), \\
-                    \frac{d}{dt} y &= x - y + z, \\
-                    \frac{d}{dt} z &= -\beta y,
-                \end{align}
-                <p>where \(f(x, \gamma, \delta) = \gamma x + (\delta - \gamma) (|x+1| - |x-1|) / 2\), and with parameter values \(\alpha = 15.446\), \(\beta = 28\), \(\gamma = -0.714\) and \(\delta = -1.143\).</p>
-            </div>
-            <div class="picture-container">
-                <img src="images/chua.png" style="width: 100%;" alt="Chua's circuit">
-            </div>
-        </div>
-
-        <hr class="custom-horizontal-line" style="width: 60%;">
-
-        <div class="split-container" style="margin-top: 100px; margin-bottom: 100px;">
-            <div class="latex-container">
-                <div style="text-align:center; font-size: 300%; color: var(--red); cursor: default; letter-spacing: 4px; font-family: Pacifico;"><div class="flickering-text">P<sub>12</sub></div></div>
+                <div style="text-align:center; font-size: 300%; color: var(--red); cursor: default; letter-spacing: 4px; font-family: Pacifico;"><div class="flickering-text" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">P<sub>12</sub></div></div>
                 <p>
                     This animation shows <a href="https://doi.org/10.1023/A:1011178014112" target="_blank">Marchal's celebrated family</a> of choreographies bifurcating from the Lagrange equilateral triangle. The family, named \(P_{12}\), is characterized by
                 </p>
@@ -72,7 +54,7 @@
             </div>
         </div>
 
-        <hr class="custom-horizontal-line" style="width: 60%">
+        <hr class="custom-horizontal-line" style="width: 60%" onmouseover="startFlicker(this)" onmouseout="stopFlicker(this)">
 
         </div>
     </body>
