@@ -12,6 +12,26 @@
         <!-- To automatically render math in text elements, include the auto-render extension: -->
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
+        <style>
+            .sections {
+                display: flex;
+                justify-content: center; /* Horizontal centering */
+                align-items: center; /* Vertical centering */
+                font-size: 125%;
+            }
+
+            .sections a {
+                float: left;
+                display: block;
+                color: var(--text-color);
+                text-align: center;
+                padding: 14px 60px;
+            }
+
+            .sections a:hover {
+                color: var(--red);
+            }
+            </style>
     </head>
 
     <body>
@@ -28,12 +48,20 @@
         </div>
 
         <div class="body-layout">
-        <div style="text-align:center; margin-top: 0px; margin-bottom: 100px;">
+        <div style="text-align:center; margin-top: 0px; margin-bottom: 50px;">
             <p style="font-size: 175%"><b>Olivier Hénot</b></p>
-            <p>École Polytechnique, Centre de Mathématiques Appliquées</p>
+        </div>
+
+        <div class="sections" style="margin-bottom: 50px;">
+            <a href="#events">Events</a>
+            <a href="#publications">Publications</a>
+            <a href="#softwares">Softwares</a>
         </div>
 
         <div style="margin-bottom: 50px;">
+            <p>
+                I am currently a postdoctoral researcher at <a href="https://www.polytechnique.edu" target="_blank">École Polytechnique</a>, affiliated with the <a href="https://portail.polytechnique.edu/cmap/en" target="_blank">Center of Applied Mathematics (CMAP)</a>, where I work with <a href="https://sites.google.com/site/maximebreden/" target="_blank">Maxime Breden</a>.
+            </p>
             <p>
                 I specialize in the study of nonlinear differential equations, particularly those set on infinite dimensional spaces, such as delay and partial differential equations.
                 I investigate aspects of dynamical system theory, with a focus on invariant manifolds, connecting orbits, as well as bifurcation analysis.
@@ -51,20 +79,25 @@
             <p style="font-family: 'Arial', sans-serif; font-size: 80%; letter-spacing: 2px;">E-mail: olivier.henot@polytechnique.edu</p>
         </div>
 
-        <div style="margin-bottom: 50px;">
-            <h2>Softwares</h2>
-            I am involved in two open-source (MIT licence) projects, written in <a href="https://julialang.org"><img src="https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia.ico" width="16em"> Julia</a>:
+        <div style="margin-bottom: 50px;" id="events">
+            <h2>Events</h2>
+            <p>
+                Participating in the thematic program <a href="https://www.crmath.ca/en/activities/#/type/activity/id/3924" target="_blank">Computational Dynamics: Analysis, Topology and Data</a> at <a href="https://www.crmath.ca/en/" target="_blank">CRM</a> in Montréal (Canada) during the Fall 2024
+            </p>
+            <p>
+                Organizer of the tutorial <a href="https://olivierhnt.github.io/Computer-assisted-proofs-in-nonlinear-analysis/" target="_blank">Computer-assisted proofs in nonlinear analysis</a> at
+            </p>
             <ul>
                 <li>
-                    <a href="https://github.com/OlivierHnt/RadiiPolynomial.jl" target="_blank">RadiiPolynomial</a> is a library for computer-assisted proofs in dynamical systems
+                    <a href="https://mathsci.kaist.ac.kr/home/en/" target="_blank">KAIST</a> in Daejeon (South Korea) in October 2024
                 </li>
                 <li>
-                    <a href="https://github.com/JuliaIntervals/IntervalArithmetic.jl" target="_blank">IntervalArithmetic</a> is a library for rigorous numerics via <a href="https://en.wikipedia.org/wiki/Interval_arithmetic" target="_blank">interval arithmetic</a>
+                    <a href="https://ncts.ntu.edu.tw/index.php" target="_blank">NCTS</a> in Taipei (Taïwan) in November 2024
                 </li>
             </ul>
         </div>
 
-        <div style="margin-bottom: 50px;">
+        <div style="margin-bottom: 50px;" id="publications">
             <h2>Publications</h2>
             <ul>
                 <li>
@@ -91,9 +124,27 @@
             </ul>
 
             <p style="color: var(--green)">PhD thesis</p>
+
+            <div style="text-indent: 40px;">
+                <a href="https://escholarship.mcgill.ca/concern/theses/bg257m072" target="_blank">Advances in computer-assisted proofs: invariant manifolds and connecting orbits</a><br>
+            </div>
+            <div style="text-indent: 40px;">
+                at <a href="https://www.mcgill.ca">McGill University</a>, Montréal (Canada), in 2023<br>
+            </div>
+            <div style="text-indent: 40px;">
+                Supervisor: <a href="https://www.math.mcgill.ca/jplessard/Home.html" target="_blank">Jean-Philippe Lessard</a>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 50px;" id="softwares">
+            <h2>Softwares</h2>
+            I am involved in two open-source (MIT licence) projects, written in <a href="https://julialang.org"><img src="https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia.ico" width="16em"> Julia</a>:
             <ul>
                 <li>
-                    O. Hénot, <a href="https://escholarship.mcgill.ca/concern/theses/bg257m072" target="_blank">Advances in computer-assisted proofs: invariant manifolds and connecting orbits</a>, <i>McGill University</i>, 2023.
+                    <a href="https://github.com/OlivierHnt/RadiiPolynomial.jl" target="_blank">RadiiPolynomial</a> is a library for computer-assisted proofs in dynamical systems
+                </li>
+                <li>
+                    <a href="https://github.com/JuliaIntervals/IntervalArithmetic.jl" target="_blank">IntervalArithmetic</a> is a library for rigorous numerics via <a href="https://en.wikipedia.org/wiki/Interval_arithmetic" target="_blank">interval arithmetic</a>
                 </li>
             </ul>
         </div>

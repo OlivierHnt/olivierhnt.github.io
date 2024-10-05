@@ -48,6 +48,7 @@ ul li {
   margin: 0 auto;
   font-size: 16px;
   font-family: 'Quicksand', sans-serif;
+  cursor: default;
 }
 
 .background-picture {
@@ -66,7 +67,7 @@ ul li {
 /* Navigation bar */
 
 .navbar {
-  padding: 15px;
+  padding: 30px 75px;
   position: relative;
 }
 
