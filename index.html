@@ -38,13 +38,13 @@
 
     <body>
         <div class="navbar">
-            <button class="burger-icon" id="burgerIcon" onclick="toggleDropdown()">
+            <button class="burger-icon" id="burgerIcon">
                 <div></div>
                 <div></div>
                 <div></div>
             </button>
             <div class="dropdown-content" id="dropdownContent">
-                <div class=fancy-text><a href="pics.html">Pictures</a></div>
+                <div class=fancy-text><a href="pics.html">Gallery</a></div>
                 <div class=fancy-text><a href="flicks.html">Flick of the day</a></div>
             </div>
         </div>
@@ -54,10 +54,10 @@
             <p style="font-size: 175%"><b>Olivier Hénot</b></p>
         </div>
 
-        <div class="sections" style="margin-bottom: 50px;">
+        <div class="sections" style="margin-bottom: 50px; flex-wrap: wrap;">
             <a href="#events">Events</a>
             <a href="#publications">Publications</a>
-            <a href="#softwares">Softwares</a>
+            <a href="#software">Software</a>
         </div>
 
         <div style="margin-bottom: 50px;">
@@ -84,12 +84,12 @@
         <div style="margin-bottom: 50px;" id="events">
             <h2>Events</h2>
             <p>
-                Participating in the thematic program <a href="https://www.crmath.ca/en/activities/#/type/activity/id/3924" target="_blank">Computational Dynamics: Analysis, Topology and Data</a> at <a href="https://www.crmath.ca/en/" target="_blank">CRM</a> in Montréal (Canada) during the Fall 2024
-            </p>
-            <p>
-                Organizer of the tutorial <a href="https://olivierhnt.github.io/Computer-assisted-proofs-in-nonlinear-analysis/" target="_blank">Computer-assisted proofs in nonlinear analysis</a> at
+                Instructor for the lecture series <a href="https://olivierhnt.github.io/Computer-assisted-proofs-in-nonlinear-analysis/" target="_blank">Computer-Assisted Proofs in Nonlinear Analysis</a> at
             </p>
             <ul>
+                <li>
+                    <a href="https://www.crmath.ca/en/" target="_blank">CRM</a> in Montréal (Canada) in September 2024
+                </li>
                 <li>
                     <a href="https://mathsci.kaist.ac.kr/home/en/" target="_blank">KAIST</a> in Daejeon (South Korea) in October 2024
                 </li>
@@ -138,8 +138,8 @@
             </div>
         </div>
 
-        <div style="margin-bottom: 50px;" id="softwares">
-            <h2>Software projects</h2>
+        <div style="margin-bottom: 50px;" id="software">
+            <h2>Software</h2>
             I am involved in two open-source (MIT licence) projects, written in <a href="https://julialang.org"><img src="https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia.ico" width="16em"> Julia</a>:
             <ul>
                 <li>

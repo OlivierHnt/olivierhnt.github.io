@@ -103,6 +103,7 @@ ul li {
 
 .burger-icon div:nth-child(2) {
   top: 10px;
+  width: 75%;
 }
 
 .burger-icon div:nth-child(3) {
@@ -151,6 +152,10 @@ ul li {
 
 .dropdown-content a:hover {
   color: var(--red);
+}
+
+.dropdown-content.open {
+  display: block;
 }
 
 
