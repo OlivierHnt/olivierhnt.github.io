@@ -5,35 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="nVsi-JeoMDlzWb5_vz7a-1x-ZkdvWosW8DDKQxf8r0A">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
         <!-- The loading of KaTeX is deferred to speed up page rendering -->
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
         <!-- To automatically render math in text elements, include the auto-render extension: -->
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-        <style>
-            .sections {
-                display: flex;
-                justify-content: center; /* Horizontal centering */
-                align-items: center; /* Vertical centering */
-                font-size: 125%;
-            }
-
-            .sections a {
-                float: left;
-                display: block;
-                color: var(--text-color);
-                text-align: center;
-                opacity: 0.5;
-                padding: 14px 60px;
-            }
-
-            .sections a:hover {
-                color: var(--red);
-                opacity: 1;
-            }
-            </style>
     </head>
 
     <body>
@@ -49,18 +26,17 @@
             </div>
         </div>
 
-        <div class="body-layout">
-        <div style="text-align:center; margin-top: 0px; margin-bottom: 50px;">
-            <p style="font-size: 175%"><b>Olivier Hénot</b></p>
+        <div class="big-title">
+            Olivier Hénot
         </div>
 
-        <div class="sections" style="margin-bottom: 50px; flex-wrap: wrap;">
+        <div class="sections">
             <a href="#events">Events</a>
             <a href="#publications">Publications</a>
-            <a href="#software">Software</a>
+            <a href="#software">Projects</a>
         </div>
 
-        <div style="margin-bottom: 50px;">
+        <div style="margin-bottom: 50px">
             <p>
                 I am currently a postdoctoral researcher at <a href="https://www.polytechnique.edu" target="_blank">École Polytechnique</a>, affiliated with the <a href="https://portail.polytechnique.edu/cmap/en" target="_blank">Center of Applied Mathematics (CMAP)</a>, where I work with <a href="https://sites.google.com/site/maximebreden/" target="_blank">Maxime Breden</a>.
             </p>
@@ -77,15 +53,17 @@
             </p>
         </div>
 
-        <div style="margin-bottom: 50px;">
-            <p style="font-family: 'Arial', sans-serif; font-size: 80%; letter-spacing: 2px;">E-mail: olivier.henot@polytechnique.edu</p>
+        <div style="margin-bottom: 50px">
+            <div class="email">E-mail: olivier.henot@polytechnique.edu</div>
         </div>
 
-        <div style="margin-bottom: 50px;" id="events">
+        <div style="margin-bottom: 50px" id="events">
             <h2>Events</h2>
+
             <p>
                 Instructor for the lecture series <a href="https://olivierhnt.github.io/Computer-assisted-proofs-in-nonlinear-analysis/" target="_blank">Computer-Assisted Proofs in Nonlinear Analysis</a> at
             </p>
+
             <ul>
                 <li>
                     <a href="https://www.crmath.ca/en/" target="_blank">CRM</a> in Montréal (Canada) in September 2024
@@ -101,6 +79,7 @@
 
         <div style="margin-bottom: 50px;" id="publications">
             <h2>Publications</h2>
+
             <ul>
                 <li>
                     R. Calleja, C. García-Azpeitia, O. Hénot, J.-P. Lessard and J. D. Mireles James, <a href="https://arxiv.org/abs/2406.17564" target="_blank">From the Lagrange triangle to the figure eight choreography: proof of Marchal's conjecture</a>, <i>ArXiv</i> (2024).
@@ -127,20 +106,24 @@
 
             <p style="color: var(--green)">PhD thesis</p>
 
-            <div style="text-indent: 40px;">
-                <a href="https://escholarship.mcgill.ca/concern/theses/bg257m072" target="_blank">Advances in computer-assisted proofs: invariant manifolds and connecting orbits</a><br>
+            <div style="text-indent: 1em">
+                Title: <a href="https://escholarship.mcgill.ca/concern/theses/bg257m072" target="_blank">Advances in computer-assisted proofs: invariant manifolds and connecting orbits</a><br>
             </div>
-            <div style="text-indent: 40px;">
-                at <a href="https://www.mcgill.ca">McGill University</a>, Montréal (Canada), in 2023<br>
+            <div style="text-indent: 1em">
+                Institution: <a href="https://www.mcgill.ca">McGill University</a>, Montréal (Canada), in 2023<br>
             </div>
-            <div style="text-indent: 40px;">
+            <div style="text-indent: 1em">
                 Supervisor: <a href="https://www.math.mcgill.ca/jplessard/Home.html" target="_blank">Jean-Philippe Lessard</a>
             </div>
         </div>
 
-        <div style="margin-bottom: 50px;" id="software">
-            <h2>Software</h2>
-            I am involved in two open-source (MIT licence) projects, written in <a href="https://julialang.org"><img src="https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia.ico" width="16em"> Julia</a>:
+        <div id="software">
+            <h2>Projects</h2>
+
+            <p>
+                I am involved in two open-source (MIT licence) projects, written in <a href="https://julialang.org"><img src="https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia.ico" width="16em"> Julia</a>:
+            </p>
+
             <ul>
                 <li>
                     <a href="https://github.com/OlivierHnt/RadiiPolynomial.jl" target="_blank">RadiiPolynomial</a> is a library for computer-assisted proofs in dynamical systems
@@ -149,7 +132,6 @@
                     <a href="https://github.com/JuliaIntervals/IntervalArithmetic.jl" target="_blank">IntervalArithmetic</a> is a library for rigorous numerics via <a href="https://en.wikipedia.org/wiki/Interval_arithmetic" target="_blank">interval arithmetic</a>
                 </li>
             </ul>
-        </div>
         </div>
     </body>
 

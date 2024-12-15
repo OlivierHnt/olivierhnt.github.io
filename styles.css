@@ -1,16 +1,49 @@
+@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Pacifico&display=swap);
+/* @import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap); */
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap);
+
 :root {
-  --text-color: #ABB2BF;
-  --bg-color: #1E2127;
-  --blue: #61AFEF;
-  --red: #E06C75;
-  --yellow: #D19A66;
-  --green: #98C379;
+  --text-color: #383A42;
+  --bg-color: #F9F9F9;
+  --blue: #4078F2;
+  --red: #E45649;
+  --yellow: #986801;
+  --green: #50A14F;
 }
 
-body {
-  background-color: var(--bg-color);
-  margin: 0 auto;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #ABB2BF;
+    --bg-color: #1E2127;
+    --blue: #61AFEF;
+    --red: #E06C75;
+    --yellow: #D19A66;
+    --green: #98C379;
+  }
 }
+
+
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px;
+  font-family: 'Quicksand', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  cursor: default;
+  text-align: justify;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+
 
 h2 {
   color: var(--red);
@@ -39,28 +72,69 @@ ul li {
 
 
 
-/* Body layout */
-
-.body-layout {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  max-width: 90%;
-  margin: 0 auto;
-  font-size: 16px;
-  font-family: 'Quicksand', sans-serif;
-  cursor: default;
-  text-align: justify;
+.big-title {
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
 }
 
-.background-picture {
-  position: absolute;
-  overflow:auto;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, #084177, #001F3F, var(--bg-color));
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+
+
+.sections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  flex-wrap: wrap;
+  margin: 50px;
+}
+
+.sections a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 60px;
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.sections a:hover {
+  color: var(--red);
+  opacity: 1;
+}
+
+
+.email {
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+
+
+.googie-title {
+  font-size: 48px;
+  color: var(--red);
+  letter-spacing: 4px;
+  font-family: 'Pacifico';
+  text-align: center;
+}
+
+
+.movie-title {
+  font-size: 48px;
+  letter-spacing: 2px;
+  font-family: 'Bebas Neue';
+  text-align: center;
+}
+
+
+.movie-poster {
+  max-height: 400px;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
 }
 
 
@@ -68,16 +142,12 @@ ul li {
 /* Navigation bar */
 
 .navbar {
-  padding: 25px;
-  max-width: 90%;
-  margin: 0 auto;
-  position: relative;
-  /* align; */
+  letter-spacing: 2px;
+  margin-bottom: 50px;
 }
 
 
-
-.burger-icon {
+.navbar .burger-icon {
   display: inline-block;
   cursor: pointer;
   position: relative;
@@ -87,7 +157,7 @@ ul li {
   background-color: transparent;
 }
 
-.burger-icon div {
+.navbar .burger-icon div {
   position: absolute;
   width: 100%;
   height: 1.5px;
@@ -97,82 +167,73 @@ ul li {
   left: 0;
 }
 
-.burger-icon div:nth-child(1) {
+.navbar .burger-icon div:nth-child(1) {
   top: 0px;
 }
 
-.burger-icon div:nth-child(2) {
+.navbar .burger-icon div:nth-child(2) {
   top: 10px;
   width: 75%;
 }
 
-.burger-icon div:nth-child(3) {
+.navbar .burger-icon div:nth-child(3) {
   top: 20px;
 }
 
-.burger-icon.open div:nth-child(1) {
+.navbar .burger-icon.open div:nth-child(1) {
   top: 10px;
   transform: rotate(45deg);
 }
 
-.burger-icon.open div:nth-child(2) {
+.navbar .burger-icon.open div:nth-child(2) {
   opacity: 0;
 }
 
-.burger-icon.open div:nth-child(3) {
+.navbar .burger-icon.open div:nth-child(3) {
   top: 10px;
   transform: rotate(-45deg);
 }
 
 
-
-.dropdown-content {
+.navbar .dropdown-content {
   display: none;
   position: absolute;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  z-index: 1;
-  /* background-color: #f9f9f9; */
-  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
-  /* top: 80px; */
   border: 1px dashed var(--yellow);
   border-radius: 5%;
   margin-top: 10px;
-  font-size: 16px;
-  font-family: 'Quicksand', sans-serif;
 }
 
-.dropdown-content a {
-  color: var(--text-color);
-  letter-spacing: 2px;
+.navbar .dropdown-content.open {
+  display: block;
+}
+
+
+.navbar .dropdown-content .fancy-text {
   padding: 5px 5px;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  color: var(--red);
-}
-
-.dropdown-content.open {
-  display: block;
-}
-
-
-
-.fancy-text {
+  color: var(--text-color);
   background-image: linear-gradient(var(--blue), var(--blue));
   background-size: 0% 2px;
   background-repeat: no-repeat;
   background-position: left bottom 2px;
-  /* transform: skew(-15deg); */
 }
 
-.fancy-text:hover {
-  /* display: inline-block; */
-  /* transform: skew(-15deg); */
+.navbar .dropdown-content .fancy-text:hover {
+  color: var(--red);
   background-size: 100% 2px;
   transition: background-size 0.4s ease;
+}
+
+
+.navbar .dropdown-content .fancy-text a {
+  color: var(--text-color);
+  text-decoration: none;
+  text-align: left;
+}
+
+.navbar .dropdown-content .fancy-text a:hover {
+  color: var(--red);
 }
 
 
@@ -211,22 +272,8 @@ ul li {
 /*  */
 
 .custom-horizontal-line {
-  /* margin: 20px auto; Adjust the margin to center the line */
   border: 1.5px solid var(--blue); /* Adjust the color of the line */
-  box-shadow: 0 0 2px var(--blue),
-  0 0 5px var(--blue); /* Adjust shadow properties */
-}
-
-
-
-/*  */
-
-.responsive-image {
-  max-height: 400px; /* Set the maximum width to 100% of its container */
-  max-width: 600px; /* Set the maximum width to 100% of its container */
-  height: auto; /* Maintain the aspect ratio and prevent stretching */
-  display: block; /* Remove any extra space below the image */
-  margin: 0 auto; /* Center the image horizontally */
+  box-shadow: 0 0 2px var(--blue), 0 0 5px var(--blue); /* Adjust shadow properties */
 }
 
 
@@ -238,15 +285,14 @@ ul li {
   max-height: 100vh;
 }
 
-.latex-container {
+.split-container .latex-container {
   flex: 1;
   box-sizing: border-box;
-  text-align: justify;
   margin-right: 25px;
   overflow: scroll;
 }
 
-.picture-container {
+.split-container .video-container {
   flex: 1;
   overflow: hidden;
   position: relative;
