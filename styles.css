@@ -4,7 +4,7 @@
 /* @import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap); */
 /* @import url(https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap); */
 @import url(https://fonts.googleapis.com/css2?family=Monoton&display=swap);
-@import url(https://db.onlinewebfonts.com/c/0b3ccd2118221f3e0ce90b9a81d4c131?family=Yasashii);
+/* @import url(https://db.onlinewebfonts.com/c/0b3ccd2118221f3e0ce90b9a81d4c131?family=Yasashii); */
 
 :root {
   --text-color: #383A42;
@@ -219,7 +219,7 @@ ul li {
 .navbar .dropdown-content .fancy-text {
   padding: 5px 5px;
   color: var(--text-color);
-  font-family: 'Yasashii';
+  /* font-family: 'Yasashii'; */
   font-size: 20px;
   background-image: linear-gradient(var(--blue), var(--blue));
   background-size: 0% 2px;
