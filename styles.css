@@ -68,9 +68,10 @@ ul li:before {
   margin-left: -1em;
 }
 
-ul li {
+/* ul li {
+  margin-top: 10px;
   margin-bottom: 10px;
-}
+} */
 
 
 
@@ -141,6 +142,7 @@ ul li {
   height: auto;
   display: block;
   margin: 20px auto;
+  /* border-radius: 2rem; */
 }
 
 
