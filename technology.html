@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="nVsi-JeoMDlzWb5_vz7a-1x-ZkdvWosW8DDKQxf8r0A">
+  <link rel="stylesheet" href="styles.css">
+  <title>Technology</title>
+  <style>
+    body {
+      background-color: #F9F9F9;
+    }
+
+    .column {
+      width: 50%;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* centers the content horizontally */
+    }
+
+    .top-section {
+      display: flex;
+      align-items: center;
+      min-height: 180px;
+      padding: 1rem 2rem;
+    }
+    .top-content {
+      display: flex;
+      justify-content: center;   /* Centers content horizontally within each half */
+      align-items: center;       /* Vertically center the text */
+      text-align: left;
+      width: 280px;
+    }
+
+    .bottom-section {
+      display: flex;
+    }
+    .bottom-content {
+      max-width: 500px;
+      width: 100%;
+      text-align: justify;  /* justify the text inside */
+    }
+
+    /* Responsive behavior for small screens */
+    @media (max-width: 800px) {
+      .top-section {
+        flex-direction: column;
+      }
+      .top-left, .top-right {
+        width: 100%;
+      }
+
+      .bottom-section {
+        flex-direction: column;
+      }
+      .column {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="name">
+      <a href="index.html">HOME</a>
+    </div>
+    <div class="menu">
+        <a href="research.html">Research</a>
+        <a href="technology.html">Technology</a>
+        <a href="teaching.html">Teaching</a>
+    </div>
+  </div>
+
+  <div class="top-section">
+    <div class="column">
+      <div class="top-content">
+        <p>
+          This page presents two open-source (MIT-licensed) software libraries I actively maintain and develop, focused on rigorous numerics and validated computation in nonlinear analysis.
+        </p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="top-content">
+        <p>
+          <a href="https://julialang.org" style="color: black;" target="_blank"><img src="https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia.ico" width="24em"></a>
+          <span style="margin-left: 2rem;"></span>
+          <a href="https://github.com/olivierhnt" style="color: black;" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-section">
+    <div class="column">
+      <div class="bottom-content">
+        <h2>RadiiPolynomial.jl</h2>
+        <p>
+          <a href="https://github.com/OlivierHnt/RadiiPolynomial.jl" target="_blank">RadiiPolynomial.jl</a> is a software library for computer-assisted proofs in dynamical systems.
+          It contains high-level tools for establishing the existence of particular solutions to discrete maps and differential equations, including steady-states, periodic orbits, and connecting trajectories.
+          <ul>
+          <li style="font-weight: bold;">Creator and lead developer</li>
+          <li>Integrates seamlessly with IntervalArithmetic.jl for rigorous results</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="bottom-content">
+        <h2>IntervalArithmetic.jl</h2>
+        <p>
+          <a href="https://github.com/JuliaIntervals/IntervalArithmetic.jl" target="_blank">IntervalArithmetic.jl</a> is a software library for validated numerics.
+          It provides certified enclosures for numerical computations via <a href="https://en.wikipedia.org/wiki/Interval_arithmetic" target="_blank">interval arithmetic</a>.
+          <ul>
+          <li style="font-weight: bold;">Main developer and maintainer</li>
+          <li>Compliant with the <a href="https://ieeexplore.ieee.org/document/7140721" target="_blank">IEEE standard for interval arithmetic</a></li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

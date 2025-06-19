@@ -1,144 +1,230 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="google-site-verification" content="nVsi-JeoMDlzWb5_vz7a-1x-ZkdvWosW8DDKQxf8r0A">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
-        <!-- The loading of KaTeX is deferred to speed up page rendering -->
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
-        <!-- To automatically render math in text elements, include the auto-render extension: -->
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-            onload="renderMathInElement(document.body);"></script>
-        <title>Homepage</title>
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="google-site-verification" content="nVsi-JeoMDlzWb5_vz7a-1x-ZkdvWosW8DDKQxf8r0A">
+  <link rel="stylesheet" href="styles.css">
+  <title>Home</title>
+  <style>
+    body {
+      overflow: hidden;
+    }
 
-    <body>
-        <div class="navbar">
-            <button class="burger-icon" id="burgerIcon">
-                <div></div>
-                <div></div>
-                <div></div>
-            </button>
-            <div class="dropdown-content" id="dropdownContent">
-                <div class=fancy-text><a href="pics.html">Gallery</a></div>
-                <div class=fancy-text><a href="flicks.html">Flick of the day</a></div>
-            </div>
-        </div>
+    .top-bar-wrapper-index {
+      display: flex;
+      justify-content: center;
+    }
 
-        <div class="big-title">
-            Olivier Hénot
-        </div>
+    .top-bar-index {
+      display: flex;
+      justify-content: space-between;
+      background-color: navajowhite;
+      width: 100%;
+      max-width: 600px;
+      padding: 0.5rem;
+      color: black;
+    }
 
-        <div class="sections">
-            <a href="#events">Events</a>
-            <a href="#publications">Publications</a>
-            <a href="#software">Projects</a>
-        </div>
+    .menu-index {
+      text-align: right;
+    }
+    .menu-index a {
+      color: black;
+    }
+    .menu-index a:hover {
+      text-decoration: none;
+    }
 
-        <div style="margin-bottom: 50px">
-            <p>
-                I am currently a postdoctoral researcher at <a href="https://www.polytechnique.edu" target="_blank">École Polytechnique</a>, affiliated with the <a href="https://portail.polytechnique.edu/cmap/en" target="_blank">Center of Applied Mathematics (CMAP)</a>, where I work with <a href="https://sites.google.com/site/maximebreden/" target="_blank">Maxime Breden</a>.
-            </p>
-            <p>
-                I specialize in the study of nonlinear differential equations, particularly those set on infinite dimensional spaces, such as delay and partial differential equations.
-                I investigate aspects of dynamical system theory, with a focus on invariant manifolds, connecting orbits, as well as bifurcation analysis.
-                This research employs numerical simulations to explore intricate dynamics, which are then rigorously coupled with analytic methods to prove ‘‘what is seen on the screen’’.
-                This process draws from several fields, such as numerical analysis, functional analysis and approximation theory.
-                <br>
-                I also have a particular interest for applications, specifically in celestial mechanics.
-            </p>
-            <p>
-                <i>Discover the astronomy picture of the day on <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank">NASA's website</a>!</i>
-            </p>
-        </div>
+    .switch-box {
+      position: absolute;
+      right: 0rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: navajowhite;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    .bg-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: opacity 1s ease-in-out, filter 1s ease-in-out;
+      z-index: -1;
+      opacity: 0;
+    }
+    /* The initial visible layer */
+    #bg1 {
+      opacity: 1;
+    }
 
-        <div style="margin-bottom: 50px">
-            <div class="email">E-mail: olivier.henot@polytechnique.edu</div>
-        </div>
+    .info-box {
+      position: absolute;
+      left: 0rem;
+      bottom: 0rem;
+      background-color: navajowhite;
+      padding: 0.5rem;
+    }
+    .info-box a {
+      color: black;
+    }
 
-        <div style="margin-bottom: 50px" id="events">
-            <h2>Events</h2>
+    /* CAP */
 
-            <p>
-                Instructor for the lecture series <a href="https://olivierhnt.github.io/Computer-assisted-proofs-in-nonlinear-analysis/" target="_blank">Computer-Assisted Proofs in Nonlinear Analysis</a> at
-            </p>
+    .cap-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center both axes */
+      text-align: center;
+      cursor: default;
+      color: navajowhite;
+    }
 
-            <ul>
-                <li>
-                    <a href="https://www.crmath.ca/en/" target="_blank">CRM</a> in Montréal (Canada) in September 2024
-                </li>
-                <li>
-                    <a href="https://mathsci.kaist.ac.kr/home/en/" target="_blank">KAIST</a> in Daejeon (South Korea) in October 2024
-                </li>
-                <li>
-                    <a href="https://ncts.ntu.edu.tw/index.php" target="_blank">NCTS</a> in Taipei (Taïwan) in November 2024
-                </li>
-            </ul>
-        </div>
+    .cap-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        <div style="margin-bottom: 50px;" id="publications">
-            <h2>Publications</h2>
+    .cap-letter-group { /* Each letter+word vertical group */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      transition: all 0.4s ease-in-out;
+    }
 
-            <ul>
-                <li>
-                    K. E. M. Church, J.-Y. Dai, O. Hénot, P. Lappicy and N. Vassena, <a href="https://arxiv.org/abs/2504.03058" target="_blank">Global continuation of stable periodic orbits in systems of competing predators</a>, <i>ArXiv</i> (2025).
-                </li>
-                <li>
-                    R. Calleja, C. García-Azpeitia, O. Hénot, J.-P. Lessard and J. D. Mireles James, <a href="https://arxiv.org/abs/2406.17564" target="_blank">From the Lagrange triangle to the figure eight choreography: proof of Marchal's conjecture</a>, <i>ArXiv</i> (2024).
-                </li>
-                <li>
-                    O. Hénot, J.-P. Lessard and J. D. Mireles James, <a href="https://doi.org/10.1137/23M1562858" target="_blank">Numerical computation of transverse homoclinic orbits for periodic solutions of delay differential equations</a>, <i>SIAM Journal on Applied Dynamical Systems</i>, <b>22</b> (2023), 3093-3129.
-                </li>
-                <li>
-                    J. B. van den Berg, O. Hénot and J.-P. Lessard, <a href="https://doi.org/10.1088/1361-6544/ad0278" target="_blank">Constructive proofs for localised radial solutions of semilinear elliptic systems on \(\mathbb{R}^d\)</a>, <i>Nonlinearity</i>, <b>36</b> (2023), 6476.
-                </li>
-                <li>
-                    K. E. M. Church, O. Hénot, P. Lappicy, J.-P. Lessard and H. Sprink, <a href="https://doi.org/10.1007/s10714-022-03054-8" target="_blank">Periodic orbits in Hořava-Lifshitz cosmologies</a>, <i>General Relativity and Gravitation</i>, <b>55</b> (2022), 2.
-                </li>
-                <li>
-                    O. Hénot, J.-P. Lessard and J. D. Mireles James, <a href="https://doi.org/10.1007/s10884-021-10002-8" target="_blank">Parameterization of unstable manifolds for DDEs: formal series solutions and validated error bounds</a>, <i>Journal of Dynamics and Differential Equations</i>, <b>34</b> (2022), 1285–1324.
-                </li>
-                <li>
-                    O. Hénot, <a href="https://doi.org/10.3934/jcd.2021013" target="_blank">On polynomial forms of nonlinear functional differential equations</a>, <i>Journal of Computational Dynamics</i>, <b>8</b> (2021), 307-323.
-                </li>
-                <li>
-                    O. Hénot and C. Rousseau, <a href="https://doi.org/10.1007/s12346-019-00330-y" target="_blank">Spiderweb central configurations</a>, <i>Qualitative Theory of Dynamical Systems</i>, <b>18</b> (2019), 1135–1160.
-                </li>
-            </ul>
+    .letter {
+      font-size: 5rem;
+      transition: all 0.4s ease;
+    }
 
-            <p style="color: var(--green)">PhD thesis</p>
+    .word { /* Hidden by default */
+      max-height: 0;
+      opacity: 0;
+      font-size: 1.5rem;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+    }
 
-            <div style="text-indent: 1em">
-                Title: <a href="https://escholarship.mcgill.ca/concern/theses/bg257m072" target="_blank">Advances in computer-assisted proofs: invariant manifolds and connecting orbits</a><br>
-            </div>
-            <div style="text-indent: 1em">
-                Institution: <a href="https://www.mcgill.ca">McGill University</a>, Montréal (Canada), in 2023<br>
-            </div>
-            <div style="text-indent: 1em">
-                Supervisor: <a href="https://www.math.mcgill.ca/jplessard/Home.html" target="_blank">Jean-Philippe Lessard</a>
-            </div>
-        </div>
+    .cap-block:hover .cap-letter-group:nth-child(1) .word {
+      max-height: 50px;
+      opacity: 1;
+    }
+    .cap-block:hover .cap-letter-group:nth-child(2) {
+      margin-top: 1.5rem;
+    }
+    .cap-block:hover .cap-letter-group:nth-child(2) .word {
+      max-height: 50px;
+      opacity: 1;
+    }
+    .cap-block:hover .cap-letter-group:nth-child(3) {
+      margin-top: 1.5rem;
+    }
+    .cap-block:hover .cap-letter-group:nth-child(3) .word {
+      max-height: 50px;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
 
-        <div id="software">
-            <h2>Projects</h2>
+  <div id="bg1" class="bg-layer"></div>
+  <div id="bg2" class="bg-layer"></div>
 
-            <p>
-                I am involved in two open-source (MIT licence) projects, written in <a href="https://julialang.org"><img src="https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia.ico" width="16em"> Julia</a>:
-            </p>
+  <div class="top-bar-wrapper-index">
+    <div class="top-bar-index">
+      <div style="text-align: left; text-wrap: nowrap;">
+        <div style="text-decoration: underline;">Olivier Hénot</div>
+        Assistant Professor
+        <br>
+        National Taïwan University
+        <br>
+        Department of Mathematics
+      </div>
+      <div class="menu-index">
+        <a href="research.html">Research</a>,
+        <a href="technology.html">Technology</a>,
+        <a href="teaching.html">Teaching</a>
+      </div>
+    </div>
+  </div>
 
-            <ul>
-                <li>
-                    <a href="https://github.com/OlivierHnt/RadiiPolynomial.jl" target="_blank">RadiiPolynomial</a> is a library for computer-assisted proofs in dynamical systems
-                </li>
-                <li>
-                    <a href="https://github.com/JuliaIntervals/IntervalArithmetic.jl" target="_blank">IntervalArithmetic</a> is a library for rigorous numerics via <a href="https://en.wikipedia.org/wiki/Interval_arithmetic" target="_blank">interval arithmetic</a>
-                </li>
-            </ul>
-        </div>
-    </body>
+  <div class="switch-box" onclick="switchBackground()">Click to switch</div>
 
-    <script src="script.js"></script>
+  <div class="info-box">
+  <div class="email">E-mail: olivier.henot@polytechnique.edu</div>
+  Short CV:
+  <ul style="margin: 0;">
+  <li>Postdoctoral researcher at École Polytechnique [lab: <a href="https://cmap.ip-paris.fr" target="_blank">CMAP</a>] (France), 2023-2025</li>
+  <li>Ph.D. McGill University (Canada), 2023 (supervisor: <a href="https://www.math.mcgill.ca/jplessard/Home.html" target="_blank">Jean-Philippe Lessard</a>)</li>
+  <li>M.Sc. Université de Montréal (Canada), 2018</li>
+  </ul>
+  </div>
 
+<div class="cap-container">
+    <div class="cap-block">
+      <div class="cap-letter-group">
+        <div class="letter">C</div>
+        <div class="word">Computer</div>
+      </div>
+      <div class="cap-letter-group">
+        <div class="letter">A</div>
+        <div class="word">Assisted</div>
+      </div>
+      <div class="cap-letter-group">
+        <div class="letter">P</div>
+        <div class="word">Proofs</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+const images = [
+  'url("images/banach_fixed_point.png")',
+  'url("images/interval.png")',
+  'url("images/turbulence.png")',
+];
+
+let index = 0;
+let showingFirst = true;
+
+const bg1 = document.getElementById('bg1');
+const bg2 = document.getElementById('bg2');
+
+// Initialize first image
+bg1.style.backgroundImage = images[0];
+
+function switchBackground() {
+  index = (index + 1) % images.length;
+
+  const front = showingFirst ? bg1 : bg2;
+  const back = showingFirst ? bg2 : bg1;
+
+  // Set next image on back layer
+  // back.style.backgroundImage = `url(${images[index]})`;
+  back.style.backgroundImage = images[index];
+
+  // Reset style for transition
+  back.style.filter = 'blur(8px)';
+  back.style.opacity = '1';
+
+  // Start blur-in and fade transition
+  setTimeout(() => {
+    back.style.filter = 'blur(0px)';
+  }, 50); // Allow time for opacity to start before blur animates
+
+  // Fade out the old one
+  front.style.opacity = '0';
+
+  showingFirst = !showingFirst;
+}
+  </script>
+
+</body>
 </html>
