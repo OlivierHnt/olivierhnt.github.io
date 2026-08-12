@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+/* ================================================================
+   Swiss / typographic
+   white ground · near-black ink · one red
+   Inter for text and display · IBM Plex Mono for labels & metadata
+   ================================================================ */
+
+:root{
+  --bg:    #FFFFFF;
+  --ink:   #0A0A0A;
+  --mut:   #6E6E6E;
+  --line:  #E4E4E4;   /* minor rules   */
+  --red:   #E2231A;   /* the one accent */
+
+  --sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --w: 76rem;         /* page width     */
+  --measure: 44rem;   /* reading width  */
+}
+
+*,*::before,*::after{ box-sizing:border-box }
+html{ -webkit-text-size-adjust:100% }
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  font-weight:400;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+a{ color:inherit; text-decoration:none }
+p{ margin:0 0 1.1rem }
+p:last-child{ margin-bottom:0 }
+i,em{ font-style:italic }
+
+.frame{ max-width:var(--w); margin:0 auto; padding:0 2rem }
+
+/* ----------------------------------------------------------------
+   Header — name left, nav right, one black rule under it
+   ---------------------------------------------------------------- */
+
+.hd{ border-bottom:1px solid var(--ink) }
+.hd .frame{
+  display:flex; justify-content:space-between; align-items:baseline;
+  gap:2rem; flex-wrap:wrap; padding-top:1.2rem; padding-bottom:1.2rem;
+}
+.hd .id{
+  font-weight:700; font-size:.82rem; letter-spacing:.1em; text-transform:uppercase;
+}
+.hd .id:hover{ color:var(--red) }
+.nav{
+  display:flex; gap:1.8rem;
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase;
+}
+.nav a:hover{ color:var(--red) }
+.nav a[aria-current="page"]{ color:var(--red) }
+
+/* ----------------------------------------------------------------
+   Masthead — huge display type + mono kicker
+   ---------------------------------------------------------------- */
+
+.mast{ padding:4.5rem 0 4rem }
+.display{
+  margin:0;
+  font-size:clamp(2.8rem, 8.5vw, 6.5rem);
+  font-weight:800;
+  line-height:.94;
+  letter-spacing:-.03em;
+  text-transform:uppercase;
+}
+.display .ln{ display:block }
+.display .ln::first-letter{ color:var(--red) }   /* C · A · P */
+.kicker{
+  margin-top:1.6rem;
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--mut);
+}
+.kicker b{ font-weight:500; color:var(--ink) }
+
+/* ----------------------------------------------------------------
+   Sections — black top rule, mono label column, content column
+   ---------------------------------------------------------------- */
+
+.sec{ border-top:1px solid var(--ink); padding:3rem 0 4rem }
+.sec .frame{
+  display:grid; grid-template-columns:15rem 1fr; gap:2rem 3rem; align-items:start;
+}
+.lab{
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.1em;
+  text-transform:uppercase; line-height:2;
+  position:sticky; top:1.5rem;
+}
+.lab .no{ color:var(--red); margin-right:.7rem }
+.lab .ct{ color:var(--mut) }
+
+.bd{ min-width:0; max-width:var(--measure) }
+.bd--wide{ max-width:none }
+
+.lede{ font-size:1.25rem; line-height:1.55; font-weight:500; letter-spacing:-.01em }
+
+.link{ border-bottom:1px solid var(--ink) }
+.link:hover{ color:var(--red); border-bottom-color:var(--red) }
+
+.mut{ color:var(--mut) }
+
+/* mono utility line, e.g. external refs */
+.ref{
+  font-family:var(--mono); font-size:.74rem; letter-spacing:.04em;
+}
+.ref a{ border-bottom:1px solid var(--ink) }
+.ref a:hover{ color:var(--red); border-bottom-color:var(--red) }
+
+/* ----------------------------------------------------------------
+   Data rows — mono key + value
+   ---------------------------------------------------------------- */
+
+.rows{ margin:0 }
+.rows > div{
+  display:grid; grid-template-columns:9.5rem 1fr; gap:1.5rem;
+  padding:.85rem 0; border-top:1px solid var(--line);
+}
+.rows > div:first-child{ border-top:0; padding-top:0 }
+.rows .k{
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--mut); padding-top:.28rem;
+}
+
+/* ----------------------------------------------------------------
+   Publications — mono index, hanging grid
+   ---------------------------------------------------------------- */
+
+.pubs{ list-style:none; margin:0; padding:0; counter-reset:p }
+.pubs li{
+  counter-increment:p;
+  display:grid; grid-template-columns:2.6rem 1fr; gap:1.5rem;
+  padding:1.15rem 0; border-top:1px solid var(--line);
+}
+.pubs li:first-child{ border-top:0; padding-top:0 }
+.pubs li::before{
+  content:counter(p, decimal-leading-zero);
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.05em;
+  color:var(--red); padding-top:.3rem;
+}
+
+/* ----------------------------------------------------------------
+   Software — two columns split by a rule
+   ---------------------------------------------------------------- */
+
+.libs{ display:grid; grid-template-columns:1fr 1fr }
+.lib{ padding-right:3rem }
+.lib + .lib{ border-left:1px solid var(--ink); padding-left:3rem; padding-right:0 }
+.lib h2{
+  margin:0 0 .3rem; font-size:1.5rem; font-weight:700; letter-spacing:-.01em;
+}
+.lib h2 a:hover{ color:var(--red) }
+.role{
+  font-family:var(--mono); font-size:.68rem; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--red); margin-bottom:1.3rem;
+}
+.lib ul{ list-style:none; margin:1.1rem 0 0; padding:0 }
+.lib li{ padding-left:1.2rem; position:relative; margin-bottom:.5rem }
+.lib li::before{ content:"—"; position:absolute; left:0; color:var(--mut) }
+
+/* ----------------------------------------------------------------
+   Events — mono date + venue
+   ---------------------------------------------------------------- */
+
+.events{ list-style:none; margin:0; padding:0 }
+.events li{
+  display:grid; grid-template-columns:9.5rem 1fr; gap:1.5rem;
+  padding:1rem 0; border-top:1px solid var(--line);
+}
+.events li:first-child{ border-top:0; padding-top:0 }
+.events .when{
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--mut); padding-top:.3rem;
+}
+.events .place{ display:block; color:var(--mut); font-size:.92rem }
+
+/* ----------------------------------------------------------------
+   Footer
+   ---------------------------------------------------------------- */
+
+.ft{ border-top:1px solid var(--ink) }
+.ft .frame{
+  display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  padding-top:1.1rem; padding-bottom:2.8rem;
+  font-family:var(--mono); font-size:.68rem; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--mut);
+}
+.ft a:hover{ color:var(--red) }
+
+/* ----------------------------------------------------------------
+   Small screens
+   ---------------------------------------------------------------- */
+
+@media (max-width:760px){
+  .frame{ padding:0 1.15rem }
+  .mast{ padding:3rem 0 2.6rem }
+  .sec{ padding:2.2rem 0 3rem }
+  .sec .frame{ grid-template-columns:1fr; gap:1.4rem }
+  .lab{ position:static; line-height:1.6 }
+  .rows > div{ grid-template-columns:1fr; gap:.15rem }
+  .events li{ grid-template-columns:1fr; gap:.15rem }
+  .libs{ grid-template-columns:1fr }
+  .lib{ padding-right:0 }
+  .lib + .lib{ border-left:0; border-top:1px solid var(--ink); padding-left:0; margin-top:2.4rem; padding-top:2.4rem }
+}

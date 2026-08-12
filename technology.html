@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="nVsi-JeoMDlzWb5_vz7a-1x-ZkdvWosW8DDKQxf8r0A">
+  <link rel="stylesheet" href="styles.css">
+  <title>Technology — Olivier Hénot</title>
+</head>
+<body>
+
+<header class="hd">
+  <div class="frame">
+    <a class="id" href="index.html">Olivier Hénot</a>
+    <nav class="nav">
+      <a href="research.html">Research</a>
+      <a href="technology.html" aria-current="page">Technology</a>
+      <a href="teaching.html">Teaching</a>
+    </nav>
+  </div>
+</header>
+
+<section class="mast">
+  <div class="frame">
+    <h1 class="display"><span class="ln">Technology</span></h1>
+    <div class="kicker">Rigorous numerics · Validated computation · Open source (MIT)</div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="frame">
+    <div class="lab"><span class="no">01</span>Overview</div>
+    <div class="bd">
+      <p class="lede">
+        Two open-source software libraries I actively maintain and develop, focused on rigorous numerics and validated computation in nonlinear analysis.
+      </p>
+      <p class="ref" style="margin-top:2rem">
+        → Written in <a href="https://julialang.org" target="_blank">Julia</a> &nbsp;·&nbsp; <a href="https://github.com/olivierhnt" target="_blank">github.com/olivierhnt</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="frame">
+    <div class="lab"><span class="no">02</span>Libraries <span class="ct">(2)</span></div>
+    <div class="bd bd--wide">
+      <div class="libs">
+        <div class="lib">
+          <h2><a href="https://github.com/OlivierHnt/RadiiPolynomial.jl" target="_blank">RadiiPolynomial.jl</a></h2>
+          <div class="role">Creator &amp; lead developer</div>
+          <p>
+            A library for computer-assisted proofs in dynamical systems.
+            It contains high-level tools for establishing the existence of particular solutions to discrete maps and differential equations, including steady-states, periodic orbits, and connecting trajectories.
+          </p>
+          <ul>
+            <li>Integrates seamlessly with IntervalArithmetic.jl for rigorous results</li>
+          </ul>
+        </div>
+        <div class="lib">
+          <h2><a href="https://github.com/JuliaIntervals/IntervalArithmetic.jl" target="_blank">IntervalArithmetic.jl</a></h2>
+          <div class="role">Main developer &amp; maintainer</div>
+          <p>
+            A library for validated numerics.
+            It provides certified enclosures for numerical computations via <a class="link" href="https://en.wikipedia.org/wiki/Interval_arithmetic" target="_blank">interval arithmetic</a>.
+          </p>
+          <ul>
+            <li>Compliant with the <a class="link" href="https://ieeexplore.ieee.org/document/7140721" target="_blank">IEEE standard for interval arithmetic</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="frame">
+    <span>Olivier Hénot</span>
+    <a href="mailto:olivierhenot@ntu.edu.tw">olivierhenot@ntu.edu.tw</a>
+  </div>
+</footer>
+
+</body>
+</html>
